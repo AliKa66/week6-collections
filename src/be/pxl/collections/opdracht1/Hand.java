@@ -12,14 +12,14 @@ public class Hand {
 	}
 
 	public boolean hasColor(Color c) {
-		int numberOfSearchedColor = (int) hand.stream().filter(s -> s.color == c).count();
+		int numberOfSearchedColor = (int) hand.stream().filter(s -> s.getColor() == c).count();
 		boolean hasColor = numberOfSearchedColor > 0 ? true : false;
 
 		return hasColor;
 	}
 
 	public String showHand() {
-		String handText = hand.stream().map(c -> c.color.toString() + c.value.toString()).reduce("",
+		String handText = hand.stream().map(c -> c.getColor().toString() + c.getValue().toString()).reduce("",
 				(acc, el) -> acc + el);
 		return handText;
 	}

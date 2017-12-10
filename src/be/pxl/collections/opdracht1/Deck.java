@@ -30,7 +30,7 @@ public class Deck {
 	}
 
 	public String showDeck() {
-		String deckText = deck.stream().map(c -> c.color.toString() + c.value.toString()).reduce("",
+		String deckText = deck.stream().map(c -> c.getColor().toString() + c.getValue().toString()).reduce("",
 				(acc, el) -> acc + el);
 		return deckText;
 	}
